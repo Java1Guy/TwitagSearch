@@ -1,0 +1,7 @@
+cron:
+- description: get new annyongs
+  url: /search
+  schedule: every 2 minutes
+- description: reply to annyongs
+  url: /reply
+  schedule: every 1 minutes

@@ -1,0 +1,14 @@
+/search is setup as a cron task that runs every 2 minutes.
+It's mapped to the twitagsearch.SearchPage RequestHandler, which calls twitagsearch.Search().
+Which calls api.Search (added by me to twitter.py).
+I also just added code to set the User-Agent,
+which apparently ups your search limit (otherwise app engine IPs get rate limited
+ fairly often), haven't deployed to see if that helps.
+
+So, to use this code yourself:
+
+- put valid strings in USERNAME, PASSWORD, USER_AGENT in twitagsearch.py (create a new twitter account).
+- tweak twitagsearch.Search() to be what you want to search for
+    (http://apiwiki.twitter.com/Twitter-Search-API-Method:-search)
+- Create a new model.py that has objects for what you want to store.
+- Create new pages for retrieving the data.
